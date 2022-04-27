@@ -1,0 +1,52 @@
+{
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "prefer-destructuring": "off",
+    "radix": "off",
+    "no-unused-expressions": "warn",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "warn",
+    "react/button-has-type": "off",
+    "react/jsx-fragments": "off",
+    "react/no-unstable-nested-components": "off",
+    "react/require-default-props": "off",
+    "react/no-array-index-key": "off",
+    "react/forbid-prop-types": "off",
+    "no-return-await": "off",
+    "no-nested-ternary": "off",
+    "no-underscore-dangle": "off",
+    "prefer-template": "off",
+    "dot-notation": "off",
+    "camelcase": "warn",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off"
+  }
+}

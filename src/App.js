@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { SnackbarProvider } from 'notistack';
+import { ThemeProvider } from '@mui/material/styles';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import RouteList from 'config/RouteList';
+import theme from 'config/theme/theme';
+
+const queryClient = new QueryClient();
+const nodeEnv = process.env.NODE_ENV;
+
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <QueryClientProvider client={queryClient}>
+      <SnackbarProvider
+        maxSnack={5}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right'
+        }}
+        preventDuplicate
+        autoHideDuration={5000}>
+        <RouteList />
+        {nodeEnv === 'development' ? <ReactQueryDevtools initialIsOpen={false} /> : null}
+      </SnackbarProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
+);
 
 export default App;
