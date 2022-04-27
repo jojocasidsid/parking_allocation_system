@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### ENV
+
+ENV is part of gitignore. Go to env.example then paste all the contents to your env.
+
 ## Available Scripts
 
 In the project directory, you can run:
